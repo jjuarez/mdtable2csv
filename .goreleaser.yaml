@@ -1,3 +1,4 @@
+---
 before:
   hooks:
     - go mod tidy
@@ -6,17 +7,14 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-      - windows
       - darwin
-      - freebsd
     goarch:
-      - 386
       - amd64
       - arm
       - arm64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Version }}"
+  version_template: "{{ .Version }}"
 changelog:
   sort: asc
